@@ -4927,8 +4927,8 @@ function generateRemark(index, port, address, cleanIPs, protocol, configType) {
   let remark = "";
   let addressType;
   const type = configType ? ` ${configType}` : "";
-  cleanIPs.includes(address) ? addressType = "Clean IP" : addressType = isDomain(address) ? "Domain" : isIPv4(address) ? "IPv4" : isIPv6(address) ? "IPv6" : "";
-  return `\u{1F4A6} ${index} - ${protocol}${type} - ${addressType} : ${port}`;
+  cleanIPs.includes(address) ? addressType = "Clean IP" : addressType = isDomain(address) ? (address) : isIPv4(address) ? (address) : isIPv6(address) ? "IPv6" : "";
+  return `\u{1F4A6} ${index} - ${protocol}${type} - ${addressType} `;
 }
 function isDomain(address) {
   const domainPattern = /^(?!\-)(?:[A-Za-z0-9\-]{1,63}\.?)+[A-Za-z]{2,}$/;
